@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>M09: Chromakey</title>
+        <meta charset="utf-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="css/estil.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body onload="StartBackground();">
+        <h1>Canvis de fons d'un video amb el fons verd</h1>
+        <p class="instructions">Amb el butó play pots iniciar el video. Després pots escollir el fons del video que del teu gust.</p>
+        <div id="wrapper" class="clearfix">
+            <div id="output">
+                <p>Canvas de sortida</p>
+                <canvas id="videoscreen" width="320" height="180" >
+                    <p>Sorry your browser does not support HTML5</p>
+                </canvas>
+            </div>
+            <div id="source">
+                <p>Video amb el fons verd</p>
+                <video style="" id="videodata" loop="loop" preload="auto" width="320" height="180">
+                    <source src="videos/Gav_green.mp4" type='video/mp4' />
+                    <source src="videos/Gav_green.webm" type='video/webm' />
+                    <source src="videos/Gav_green.ogv" type='video/ogg' />
+                </video>  
+            </div>
+            <div id="backgroundvideo">
+                <p>Video de Background</p>
+                <video style="" id="videoBackgrounddata" loop="loop" preload="auto" width="320" height="180">
+                </video>
+            </div>
+            <div id="backgroundimage" >
+                <p>Imatge de Background</p>
+                <img id="imageBackgrounddata" width="380" height="250" />
+            </div>
+        </div>
+
+        <div id="wrapper2" class="clearfix">
+            <div id="backgroundimageselection">
+                <p>Escollir imatge de fons:</p>
+                <ul>
+                    <li><input type="radio" id="bg1" name="background" value="images/background1.jpg" onclick="loadBackgroundVideo();" /><label for="bg1">Gegants de Vic</label></li>
+                    <li><input type="radio" id="bg2" name="background" value="images/background2.jpg" onclick="loadBackgroundVideo();" /><label for="bg2">El cap de Llupia</label></li>
+                    <li><input type="radio" id="bg3" name="background" value="images/background3.jpg" onclick="loadBackgroundVideo();" /><label for="bg3">El museo de Vic</label></li>
+                    <li><input type="radio" id="bg4" name="background" value="images/background4.jpg" onclick="loadBackgroundVideo();" /><label for="bg3">Museo de Vic, Art Roman</label></li>
+
+                </ul>
+            </div>
+            <div id="videocontrols">
+                <p>Control del video</p>
+                <input id="PlayPause" type="button" onclick="Play();" value="Play" />
+            </div>
+        </div>
+        <script src="js/funcions.js" type="text/javascript"></script>
+    </body>
+</html>
